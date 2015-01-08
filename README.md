@@ -10,45 +10,47 @@ This module depends on DISM module to enable .net 3.5 on Windows Server:
 
 ## Configuration
 
-The installer supports the following options:
+The installer supports the following default options:
 
-    media          = 'D:\\',
-    instancename   = 'MSSQLSERVER',
-    features       = 'SQL,AS,RS,IS',
-    agtsvcaccount  = 'SQLAGTSVC',
-    agtsvcpassword = 'Sql!@gt#2008demo',
-    assvcaccount   = 'SQLASSVC',
-    assvcpassword  = 'Sql!@s#2008demo',
-    rssvcaccount   = 'SQLRSSVC',
-    rssvcpassword  = 'Sql!Rs#2008demo',
-    sqlsvcaccount  = 'SQLSVC',
-    sqlsvcpassword = 'Sql!#2008demo',
-    instancedir    = "C:\\Program Files\\Microsoft SQL Server",
-    ascollation    = 'Latin1_General_CI_AS',
-    sqlcollation   = 'SQL_Latin1_General_CP1_CI_AS',
-    admin          = 'Administrator'
-	securitymode   = 'SQL'
-	sapassword	   = 'Sa!#2008demo'
+    media            = 'D:\\',
+    instancename     = 'MSSQLSERVER',
+    features         = 'SQL,AS,RS,IS',
+    agtsvcaccount    = 'SQLAGTSVC',
+    agtsvcpassword   = 'Sql!@gt#2008demo',
+    assvcaccount     = 'SQLASSVC',
+    assvcpassword    = 'Sql!@s#2008demo',
+    rssvcaccount     = 'SQLRSSVC',
+    rssvcpassword    = 'Sql!Rs#2008demo',
+    sqlsvcaccount    = 'SQLSVC',
+    sqlsvcpassword   = 'Sql!#2008demo',
+    instancedir      = "C:\\Program Files\\Microsoft SQL Server",
+    ascollation      = 'Latin1_General_CI_AS',
+    sqlcollation     = 'SQL_Latin1_General_CP1_CI_AS',
+    admin            = 'Administrator'
+	securitymode     = 'SQL'
+	sapassword	     = 'Sa!#2008demo'
+	indicateprogress = 'False'
 
-### Example
+### Usage
 	class { 'mssql': 
 		media => 'D:\\',
-		instancename => 'MSSQLSERVER',
-		features => 'SQL,AS,RS,IS',
-		agtsvcaccount  => 'SQLAGTSVC',
-		agtsvcpassword => 'Sql!@gt#2008demo',
-		assvcaccount   => 'SQLASSVC',
-		assvcpassword  => 'Sql!@s#2008demo',
-		rssvcaccount   => 'SQLRSSVC',
-		rssvcpassword  => 'Sql!Rs#2008demo',
-		sqlsvcaccount  => 'SQLSVC',
-		sqlsvcpassword => 'Sql!#2008demo',
-		instancedir    => "C:\\Program Files\\Microsoft SQL Server",
-		ascollation    => 'Latin1_General_CI_AS',
-		sqlcollation   => 'SQL_Latin1_General_CP1_CI_AS',
-		admin          => 'Administrator'
-		securitymode   => 'SQL'
-		sapassword	   => 'Sa!#2008demo'
+		instancename	 => 'MSSQLSERVER',
+		features 		 => 'SQL,AS,RS,IS',
+		agtsvcaccount    => 'SQLAGTSVC',
+		agtsvcpassword   => 'Sql!@gt#2008demo',
+		assvcaccount     => 'SQLASSVC',
+		assvcpassword    => 'Sql!@s#2008demo',
+		rssvcaccount     => 'SQLRSSVC',
+		rssvcpassword    => 'Sql!Rs#2008demo',
+		sqlsvcaccount    => 'SQLSVC',
+		sqlsvcpassword   => 'Sql!#2008demo',
+		instancedir      => "C:\\Program Files\\Microsoft SQL Server",
+		ascollation      => 'Latin1_General_CI_AS',
+		sqlcollation     => 'SQL_Latin1_General_CP1_CI_AS',
+		admin            => 'Administrator'
+		securitymode     => 'SQL'
+		sapassword	 	 => 'Sa!#2008demo'
+		indicateprogress => 'True'
 	}
 
 ### Notes
