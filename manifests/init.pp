@@ -28,6 +28,8 @@ class mssql (
   $ascollation    = $mssql::params::ascollation,
   $sqlcollation   = $mssql::params::sqlcollation,
   $admin          = $mssql::params::admin,
+  $securitymode   = $mssql::params::securitymode,
+  $sapassword     = $mssql::params::sapassword,
 ) inherits mssql::params {
 
   # validation
@@ -46,6 +48,8 @@ class mssql (
   validate_string($ascollation)
   validate_string($sqlcollation)
   validate_string($admin)
+  validate_string($securitymode)
+  validate_string($sapassword)
 
   User {
     ensure   => present,

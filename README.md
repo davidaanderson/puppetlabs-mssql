@@ -27,6 +27,8 @@ The installer supports the following options:
     ascollation    = 'Latin1_General_CI_AS',
     sqlcollation   = 'SQL_Latin1_General_CP1_CI_AS',
     admin          = 'Administrator'
+	securitymode   = 'SQL'
+	sapassword	   = 'Sa!#2008demo'
 
 ### Example
 	class { 'mssql': 
@@ -45,6 +47,8 @@ The installer supports the following options:
 		ascollation    => 'Latin1_General_CI_AS',
 		sqlcollation   => 'SQL_Latin1_General_CP1_CI_AS',
 		admin          => 'Administrator'
+		securitymode   => 'SQL'
+		sapassword	   => 'Sa!#2008demo'
 	}
 
 ### Notes
@@ -70,6 +74,9 @@ The password must conform to the Windows Server password policy, namely:
 	- Any alphabetic Unicode character not categorised as uppercase or lowercase 
 
 [more detail...](http://technet.microsoft.com/en-gb/library/cc786468(v=ws.10).aspx)
+
+#### securitymode
+This may be SQL for Mixed Mode Authentication, or left blank/empty for Windows Authentication.
 
 ### More Options
 See http://msdn.microsoft.com/en-us/library/ms144259.aspx for more information about these options.
