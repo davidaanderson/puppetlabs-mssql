@@ -14,22 +14,23 @@ class mssql (
   # See http://msdn.microsoft.com/en-us/library/ms144259.aspx
   # Media is required to install
   $media,
-  $instancename   = $mssql::params::instancename,
-  $features       = $mssql::params::features,
-  $agtsvcaccount  = $mssql::params::agtsvcaccount,
-  $agtsvcpassword = $mssql::params::agtsvcpassword,
-  $assvcaccount   = $mssql::params::assvcaccount,
-  $assvcpassword  = $mssql::params::assvcpassword,
-  $rssvcaccount   = $mssql::params::rssvcaccount,
-  $rssvcpassword  = $mssql::params::rssvcpassword,
-  $sqlsvcaccount  = $mssql::params::sqlsvcaccount,
-  $sqlsvcpassword = $mssql::params::sqlsvcpassword,
-  $instancedir    = $mssql::params::instancedir,
-  $ascollation    = $mssql::params::ascollation,
-  $sqlcollation   = $mssql::params::sqlcollation,
-  $admin          = $mssql::params::admin,
-  $securitymode   = $mssql::params::securitymode,
-  $sapassword     = $mssql::params::sapassword,
+  $instancename     = $mssql::params::instancename,
+  $features         = $mssql::params::features,
+  $agtsvcaccount    = $mssql::params::agtsvcaccount,
+  $agtsvcpassword   = $mssql::params::agtsvcpassword,
+  $assvcaccount     = $mssql::params::assvcaccount,
+  $assvcpassword    = $mssql::params::assvcpassword,
+  $rssvcaccount     = $mssql::params::rssvcaccount,
+  $rssvcpassword    = $mssql::params::rssvcpassword,
+  $sqlsvcaccount    = $mssql::params::sqlsvcaccount,
+  $sqlsvcpassword   = $mssql::params::sqlsvcpassword,
+  $instancedir      = $mssql::params::instancedir,
+  $ascollation      = $mssql::params::ascollation,
+  $sqlcollation     = $mssql::params::sqlcollation,
+  $admin            = $mssql::params::admin,
+  $securitymode     = $mssql::params::securitymode,
+  $sapassword       = $mssql::params::sapassword,
+  $indicateprogress = $mssql::params::indicateprogress,
 ) inherits mssql::params {
 
   # validation
@@ -50,6 +51,7 @@ class mssql (
   validate_string($admin)
   validate_string($securitymode)
   validate_string($sapassword)
+  validate_string($indicateprogress)
 
   User {
     ensure   => present,

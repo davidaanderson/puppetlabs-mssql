@@ -17,7 +17,11 @@ HELP="False"
 
 ; Specifies that the detailed Setup log should be piped to the console.
 
-INDICATEPROGRESS="False"
+<% if @indicateprogress -%>
+INDICATEPROGRESS="<%= @indicateprogress %>"
+<% else -%>
+INDICATEPROGRESS="FALSE"
+<% end -%>
 
 ; Setup will not display any user interface.
 
