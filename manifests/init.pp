@@ -52,19 +52,19 @@ class mssql (
     before => Exec['install_mssql2008'],
   }
 
-  user { 'SQLAGTSVC':
+  user { $agtsvcaccount:
     comment  => 'SQL 2008 Agent Service.',
     password => $agtsvcpassword,
   }
-  user { 'SQLASSVC':
+  user { $assvcaccount:
     comment  => 'SQL 2008 Analysis Service.',
     password => $assvcpassword,
   }
-  user { 'SQLRSSVC':
+  user { $rssvcaccount:
     comment  => 'SQL 2008 Report Service.',
     password => $rssvcpassword,
   }
-  user { 'SQLSVC':
+  user { $sqlsvcaccount:
     comment  => 'SQL 2008 Service.',
     groups   => 'Administrators',
     password => $sqlsvcpassword,
