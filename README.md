@@ -28,6 +28,25 @@ The installer supports the following options:
     sqlcollation   = 'SQL_Latin1_General_CP1_CI_AS',
     admin          = 'Administrator'
 
+### Example
+	class { 'mssql': 
+		media => 'D:\\',
+		instancename => 'MSSQLSERVER',
+		features => 'SQL,AS,RS,IS',
+		agtsvcaccount  => 'SQLAGTSVC',
+		agtsvcpassword => 'Sql!@gt#2008demo',
+		assvcaccount   => 'SQLASSVC',
+		assvcpassword  => 'Sql!@s#2008demo',
+		rssvcaccount   => 'SQLRSSVC',
+		rssvcpassword  => 'Sql!Rs#2008demo',
+		sqlsvcaccount  => 'SQLSVC',
+		sqlsvcpassword => 'Sql!#2008demo',
+		instancedir    => "C:\\Program Files\\Microsoft SQL Server",
+		ascollation    => 'Latin1_General_CI_AS',
+		sqlcollation   => 'SQL_Latin1_General_CP1_CI_AS',
+		admin          => 'Administrator'
+	}
+
 ### Notes
 #### instancedir
 The path should be specified without a trailing backslash. The following formats are supported [[ref]](https://social.msdn.microsoft.com/Forums/sqlserver/en-US/af3bb5ed-0f4b-4c8a-8b12-826bccb850b8/sql-08-r2-standard-x64-installation-failure-illegal-characters-in-path?forum=sqlsetupandupgrade "ref"):
